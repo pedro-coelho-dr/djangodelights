@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Ingredients</h1>
+    <a href="{% url 'add_ingredient' %}">Add New Ingredient</a>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Quantity</th>
+            <th>Unit</th>
+            <th>Unit Price</th>
+            <th>Actions</th>
+        </tr>
+        {% for ingredient in object_list %}
+        <tr>
+            <td>{{ ingredient.name }}</td>
+            <td>{{ ingredient.quantity }}</td>
+            <td>{{ ingredient.unit }}</td>
+            <td>{{ ingredient.unit_price }}</td>
+            <td>
+                <a href="{% url 'update_ingredient' ingredient.id %}">Edit</a>
+                <!-- Add delete link if needed -->
+            </td>
+        </tr>
+        {% endfor %}
+    </table>
+{% endblock %}

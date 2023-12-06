@@ -1,7 +1,7 @@
 .PHONY: migrations-init superuser migrations migrate run requirements collectstatic freeze
 
 migrations-init:
-	python manage.py makemigrations libresenses
+	python manage.py makemigrations inventory
 
 superuser:
 	python manage.py createsuperuser

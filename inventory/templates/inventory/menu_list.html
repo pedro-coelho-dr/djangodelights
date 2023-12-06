@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+
+{% block content %}
+    <h1>Menu Items</h1>
+    <a href="{% url 'add_menu_item' %}">Add New Menu Item</a>
+    <ul>
+        {% for item in object_list %}
+            <li>
+                <img src="{{ item.image_url }}" alt="{{ item.title }} image" class="small-photo">
+                {{ item.title }} - ${{ item.price }}
+                <a href="{% url 'add_recipe_requirement' item.id %}">Add Recipe Requirements</a>
+                | <a href="{% url 'delete_menu_item' item.id %}">Remove Menu Item</a>
+
+                <ul>
+                    {% for requirement in item.reciperequirement_set.all %}
+                        <li>{{ requirement.ingredient.name }} - {{ requirement.quantity }}
+                            <a href="{% url 'delete_recipe_requirement' requirement.id %}">Remove</a>
+                        </li>
+                    {% empty %}
+                        <li>No recipe requirements.</li>
+                    {% endfor %}
+                </ul>
+            </li>
+        {% endfor %}
+    </ul>
+{% endblock %}
