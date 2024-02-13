@@ -4,4 +4,14 @@ This is a Tapioca restaurant inventory and reports tracker.
 
 I wont further develop this project, it has really simple html/css. it was just a practice for the course.
 
-Later on I will try to deploy this site into azzure for practice.
+Also used for the devops with docker course, can be containerized:
+
+Link to the image on Docker Hub: https://hub.docker.com/r/pedrocoelhodr/djangodelights
+
+Command to run the image: ❯ docker run -p 8080:8080 pedrocoelhodr/djangodelights
+
+Open the browser and go to: localhost:8080
+
+User and password are: 'admin' and 'password'
+
+See Dockerfile for more details.
