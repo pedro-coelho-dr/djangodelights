@@ -22,4 +22,4 @@ collectstatic:
 	python manage.py collectstatic
 
 freeze:
-	pip freeze > requirements. txt  
+	pip freeze > requirements.txt
